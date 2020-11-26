@@ -1,0 +1,14 @@
+data = {
+	"dantri":{
+		"image":"aaaaaaaaaaa", 
+		"title":"bbbbbbbbbbbb"
+	},
+	"VnExpress":{
+		"image":"aaaaaaaaaaa",
+		"title":"bbbbbbbbbbb"
+	},
+	"suc_khoe":{
+		"image":"cccccccc",
+		"title":"ffffffffffff"
+	}
+}
