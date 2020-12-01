@@ -1,29 +1,41 @@
 import requests
 from bs4 import BeautifulSoup
+import pandas
 
-titles = []
-contents = []
 imglinks = []
 imgcaps = []
 
-for i in range(1,40):
+for i in range(1,21):
     page = requests.get("https://dantri.com.vn/suc-khoe/ung-thu/trang-"+str(i)+".htm")
-
     soup = BeautifulSoup(page.content,"html.parser")
-    
-    title_temp = soup.find_all("h3",{"class":"news-item__title"})
-    content_temp = soup.find_all("a",{"class":"news-item__sapo"})
-    img_temp = soup.find_all("img",{"class":"no-img"})
 
-    for j in title_temp:
-        titles.append(j.getText().replace("\n","").strip())
-    for j in content_temp:
-        contents.append(j.getText().replace("\n","").strip())
-    for j in img_temp:
-        imglinks.append(j.get('src')) 
-        imgcaps.append(j.get('alt'))
+    if (i==1):
+        img = soup.find('div',{'class':'col--highlight-news'}).find_all('img')
+        parents = soup.find('div',{'class':'col--primary'}).find_all('ul',{'class':'dt-list--lg'})
+        for j in parents:
+            child = j.find_all('img')
+            for k in child:
+                img.append(k)
+        for j in img:
+            imgcaps.append(j.get('alt'))
+            imglinks.append(j.get('src'))
+    else:
+        img = soup.find('ul',{'class':'dt-list--lg'}).find_all('img')
+        for j in img:
+            imgcaps.append(j.get('alt'))
+            imglinks.append(j.get('src'))
+
+df = pandas.DataFrame({
+    "Image Caption": imgcaps,
+    "Image URL": imglinks
+})
+df.to_csv('Dantri.csv', index = False)
+
+
         
-print("\n".join(titles))
+        
+        
+
 
         
 
