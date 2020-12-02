@@ -21,8 +21,9 @@ for i in range(1,26):
         for j in range(1,21):
             crawl(20*(i-1)+j+4)
 
-df = pandas.DataFrame({
+data = {
     "Image Caption": imgcaps,
     "Image URL": imglinks
-})
-df.to_csv('Vnexpess.csv', index = False)
+}
+df = pandas.DataFrame(data)
+df.to_csv(r'..\UI_demo_II\Vnexpress.csv', index = False)
