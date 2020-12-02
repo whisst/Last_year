@@ -25,11 +25,12 @@ for i in range(1,21):
             imgcaps.append(j.get('alt'))
             imglinks.append(j.get('src'))
 
-df = pandas.DataFrame({
+data = {
     "Image Caption": imgcaps,
     "Image URL": imglinks
-})
-df.to_csv('Dantri.csv', index = False)
+}
+df = pandas.DataFrame(data)
+df.to_csv(r'..\UI_demo_II\Dantri.csv', index = False)
 
 
         
