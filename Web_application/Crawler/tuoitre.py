@@ -22,9 +22,3 @@ print('\n')
 print('\n'.join(imgCaps))
 print('\n')
 
-import requests
-import bs4
-
-titles = []
-imgCaps = []
-imgLinks = []
