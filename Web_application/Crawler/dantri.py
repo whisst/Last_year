@@ -31,12 +31,3 @@ data = {
 }
 df = pandas.DataFrame(data)
 df.to_csv(r'..\UI_demo_II\Dantri.csv', index = False)
-
-
-        
-        
-        
-
-
-        
-
