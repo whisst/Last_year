@@ -60,7 +60,6 @@
   <hr class="mt-2 mb-5">
 
   <div class="row text-center text-lg-left">
-    <!-- Team Member 1 -->
     <div class="col-xl-3 col-md-6 mb-4">
       <div class="card border-0 shadow">
         <img id="Img1"  class="card-img-top" alt="...">
@@ -69,7 +68,6 @@
         </div>
       </div>
     </div>
-    <!-- Team Member 2 -->
     <div class="col-lg-3 col-md-4 col-6">
       <div class="card border-0 shadow">
         <img id="Img2" class="card-img-top" alt="...">
@@ -78,7 +76,6 @@
         </div>
       </div>
     </div>
-    <!-- Team Member 3 -->
     <div class="col-lg-3 col-md-4 col-6">
       <div class="card border-0 shadow">
         <img id="Img3" class="card-img-top" alt="...">
@@ -87,7 +84,6 @@
         </div>
       </div>
     </div>
-    <!-- Team Member 4 -->
     <div class="col-lg-3 col-md-4 col-6">
       <div class="card border-0 shadow">
         <img id="Img4" class="card-img-top" alt="...">
@@ -96,7 +92,6 @@
         </div>
       </div>
     </div>
-    <!-- Team Member 5 -->
     <div class="col-lg-3 col-md-4 col-6">
       <div class="card border-0 shadow">
         <img id="Img5" class="card-img-top" alt="...">
@@ -105,7 +100,6 @@
         </div>
       </div>
     </div>
-    <!-- Team Member 6 -->
     <div class="col-lg-3 col-md-4 col-6">
       <div class="card border-0 shadow">
         <img id="Img6" class="card-img-top" alt="...">
@@ -138,7 +132,7 @@
       dataType: 'text',
     }).done(successFunction);
     function successFunction(data) {
-      var allRows = data.split(/\r?\n|\r/);
+      var allRows = data.split(/\n/);
       var x, temp = [];
 
       for (singleRow = 1; singleRow <= 8; singleRow++){

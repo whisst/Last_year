@@ -138,7 +138,7 @@
       dataType: 'text',
     }).done(successFunction);
     function successFunction(data) {
-      var allRows = data.split(/\r?\n|\r/);
+      var allRows = data.split(/\n/);
       var x, temp = [];
 
       for (singleRow = 1; singleRow <= 8; singleRow++){
